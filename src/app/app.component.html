@@ -1,3 +1,15 @@
-<p>Parent component with value {{ value }}</p>
+<!--
+          --------------------------------
+APP       |                              -
+-----------      COUNTER (+1) = 2        --- OUTPUT = 1 
+INPUT = 0 |                              -
+          --------------------------------
+-->
+<p>[App Component] Sends input number {{ value }} to child Counter</p>
 
-<app-counter [count]="value"></app-counter>
+<app-counter
+  [count]="value"
+  (newCountEvent)="handleNewCountEvent($event)"
+></app-counter>
+
+<p>[Child Component] Outputs Value {{ newValue }} to App Component</p>

@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  value: number = 1;
+  value: number = 0;
+  newValue: number = 0;
+
+  public handleNewCountEvent($event: number) {
+    if ($event) this.newValue = $event;
+  }
 }
